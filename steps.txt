@@ -1,0 +1,6 @@
+// command for sender
+java -jar target/SenderEventHub-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+
+
+// command for receiver
+spark-submit --packages com.databricks:spark-csv_2.10:1.1.0 --class com.azureEventHub.sparkReceiver.Receiver --master local[2] target/sparkReceiver-0.0.1-SNAPSHOT-jar-with-dependencies.jar /sparkcheckpointnew Webinar1 "NuLd2F53r2NZHIuj3IjdQMwF1KMH/NK1QVrFeIdZcuQ=" ds-bi-dw-poc-ns dsg_hdinsight_webinar1 4 "$default" /dataevents1
